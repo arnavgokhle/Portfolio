@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Seo from '../components/Seo.jsx'
 import HeroVideo from '../components/HeroVideo.jsx'
+import { HAS_VIDEO } from '../content/heroAssets.js'
 import { site } from '../content/site.js'
 import { useEntrance } from '../hooks/useEntrance.js'
 import './Home.css'
@@ -12,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Seo description="Arnav Gokhle — Business Analytics & AI and Supply Chain at UT Dallas. I build AI agents, data products, and software people actually use, and ship them." />
-      <section className="hero">
+      <section className={HAS_VIDEO ? 'hero hero--video' : 'hero'}>
         <HeroVideo />
 
         {/* Spacer keeps the bottom block pinned with space-between. */}
@@ -32,10 +33,10 @@ export default function Home() {
             </motion.h1>
 
             <motion.div className="hero__actions" {...entrance({ y: 16, delay: 1.0 })}>
-              <Link to="/work" className="btn btn--primary">
+              <Link to="/work" className="btn btn--primary hero__btn-primary">
                 See Work
               </Link>
-              <Link to="/about" className="btn btn--ghost">
+              <Link to="/about" className="btn btn--ghost hero__btn-ghost">
                 About Me
               </Link>
             </motion.div>

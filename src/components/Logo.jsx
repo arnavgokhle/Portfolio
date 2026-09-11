@@ -1,4 +1,4 @@
-export default function Logo({ size = 22 }) {
+export default function Logo({ size = 22, color = '#000' }) {
   return (
     <svg
       width={size}
@@ -8,8 +8,8 @@ export default function Logo({ size = 22 }) {
       focusable="false"
     >
       <g transform="rotate(-35 12 12)">
-        <rect x="4" y="8" width="16" height="3.4" rx="1.7" fill="#000" />
-        <rect x="4" y="13" width="16" height="3.4" rx="1.7" fill="#000" />
+        <rect x="4" y="8" width="16" height="3.4" rx="1.7" fill={color} />
+        <rect x="4" y="13" width="16" height="3.4" rx="1.7" fill={color} />
       </g>
     </svg>
   )

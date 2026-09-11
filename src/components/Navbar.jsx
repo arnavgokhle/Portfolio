@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { Plus } from 'lucide-react'
 import Logo from './Logo.jsx'
 import MenuOverlay from './MenuOverlay.jsx'
 import { site } from '../content/site.js'
+import { HAS_VIDEO } from '../content/heroAssets.js'
 import { useEntrance } from '../hooks/useEntrance.js'
 import './Navbar.css'
 
@@ -22,14 +23,16 @@ function GridIcon() {
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const onVideo = HAS_VIDEO && pathname === '/'
   const entrance = useEntrance()
 
   return (
     <>
-      <motion.nav className="nav" aria-label="Primary" {...entrance({ y: -16, duration: 0.8 })}>
+      <motion.nav className={onVideo ? 'nav nav--light' : 'nav'} aria-label="Primary" {...entrance({ y: -16, duration: 0.8 })}>
         <div className="nav__inner">
           <Link to="/" className="nav__brand" aria-label={`${site.name} — home`}>
-            <Logo />
+            <Logo color={onVideo ? '#fff' : '#000'} />
             <span className="nav__brand-text">{site.name}</span>
           </Link>
 

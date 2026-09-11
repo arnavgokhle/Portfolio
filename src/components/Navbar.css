@@ -147,3 +147,11 @@
     display: inline;
   }
 }
+
+.nav--light .nav__brand {
+  color: var(--white);
+}
+
+.nav--light .nav__brand:focus-visible {
+  outline-color: var(--white);
+}

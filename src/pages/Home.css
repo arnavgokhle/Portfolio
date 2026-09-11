@@ -23,12 +23,6 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  background: linear-gradient(
-    to top,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0.8) 50%,
-    transparent 100%
-  );
 }
 
 .hero__left {
@@ -88,4 +82,46 @@
     flex-shrink: 0;
     justify-content: flex-end;
   }
+}
+
+/* Over the video: white type, inverted buttons ---------------------------- */
+
+.hero--video .hero__subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+}
+
+.hero--video .hero__dot {
+  background: var(--white);
+}
+
+.hero--video .hero__heading {
+  color: var(--white);
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45);
+}
+
+.hero--video .hero__btn-primary {
+  background: var(--white);
+  color: var(--black);
+}
+
+.hero--video .hero__btn-primary:hover {
+  background: #e8e8ea;
+}
+
+.hero--video .hero__btn-ghost {
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero--video .hero__btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.hero--video .btn:focus-visible {
+  outline-color: var(--white);
 }
