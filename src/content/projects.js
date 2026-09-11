@@ -1,5 +1,5 @@
-// TODO: "client-sites" still has placeholder prose. The other three are written
-// from your notes; edit freely. Adding a project = adding one object here.
+// TODO: review the prose below before going live. Adding a project = adding one
+// object to this array.
 //
 // Note on "data-quality-agent": keep it at the architecture level. No client
 // names, internal project names, specific tables, or rule counts.
@@ -76,46 +76,11 @@ export const projects = [
     ],
   },
   {
-    slug: 'client-sites',
-    title: 'Freelance web development',
-    tagline: 'Config-driven Next.js sites for F&B businesses in Bangalore.',
-    role: 'Freelance developer',
-    timeframe: '2024 – 2025',
-    stack: ['Next.js', 'TypeScript', 'Tailwind'],
-    links: {
-      live: '',
-      repo: '',
-    },
-    sections: [
-      {
-        heading: 'The offer',
-        body: [
-          'A cafe owner needed a website and the quotes he was getting were absurd. Small cafes and restaurants in Bangalore need a fast, good-looking site with a menu, hours, location, and a way to get in touch. I offered a fixed-scope build with a short turnaround and handled everything from first outreach to final QA.',
-          'Two to three clients shipped on this model, each with full ownership of their content after launch.',
-        ],
-      },
-      {
-        heading: 'The reusable architecture',
-        body: [
-          'Every site runs on the same Next.js and TypeScript codebase. Business-specific content lives in a single typed config: brand colours, menu sections, opening hours, social links, and imagery. Adding a client means adding a config file and a set of assets, not forking the code.',
-          'Tailwind keeps styling consistent across clients while still allowing per-brand theming through the config. Builds are static, so hosting is cheap and pages are fast on mobile connections.',
-        ],
-      },
-      {
-        heading: 'Results',
-        body: [
-          'Clients went from no web presence, or an outdated listing, to a mobile-first site they could share directly with customers. Turnaround per site dropped with each iteration of the shared codebase.',
-          'The bigger result was the process: scoping, communicating, and closing work end to end.',
-        ],
-      },
-    ],
-  },
-  {
     slug: 'data-quality-agent',
     title: 'AI data-quality agent',
     tagline: 'One agent in a multi-agent pipeline for enterprise master data.',
     role: 'Analyst, KPMG Digital Lighthouse',
-    timeframe: '2026', // TODO: confirm dates
+    timeframe: 'June – August 2026',
     stack: ['Python', 'FastAPI', 'React', 'LLM tooling'],
     links: {
       live: '',

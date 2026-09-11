@@ -20,7 +20,6 @@ const facts = [
       { label: 'Analyst', value: 'KPMG Digital Lighthouse' },
       { label: 'Founder', value: 'Setpiece (Summer 2026)' },
       { label: 'Technical co-founder', value: 'TailTech' },
-      { label: 'Freelance', value: 'Web developer' },
     ],
   },
   {
@@ -64,8 +63,7 @@ export default function About() {
             earned, so I built an engine that shows its reasoning and stays quiet
             when the data is thin. TailTech exists because small pet care businesses
             in India were being asked to choose between a spreadsheet and enterprise
-            pricing. The restaurant sites exist because a cafe owner needed a website
-            and the quotes he was getting were absurd. The KPMG work is the same
+            pricing. The KPMG work is the same
             instinct applied to enterprise data: the interesting part wasn't
             generating rules, it was making the system adapt to a new client without
             a code change.
