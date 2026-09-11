@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import { EASE } from '../hooks/useEntrance.js'
 import { HAS_VIDEO, HAS_POSTER } from '../content/heroAssets.js'
 
-const PLAYBACK_RATE = 0.5
+const PLAYBACK_RATE = 0.25
 import './HeroVideo.css'
 
 export default function HeroVideo() {
