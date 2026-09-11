@@ -76,6 +76,70 @@ export const projects = [
     ],
   },
   {
+    slug: 'orders-system',
+    title: 'Orders management system',
+    tagline: 'Replacing Instagram DMs and a notebook with an automated order chain',
+    role: 'Sole designer and developer',
+    timeframe: 'June 2026 — present',
+    stack: ['Next.js', 'Supabase', 'Resend'],
+    links: {},
+    sections: [
+      {
+        heading: 'The problem',
+        body: [
+          'One of those clients was taking every order through Instagram DMs — no menu structure, no order history, nothing that didn\'t live in a chat thread.',
+        ],
+      },
+      {
+        heading: 'What the customer sees',
+        body: [
+          'They place an order on the site, get an automated confirmation, and pay via UPI. Direct payment from qr code or upi id or phone number. verified by the business owner, once payment comes in.',
+        ],
+      },
+      {
+        heading: "Why there's no dashboard",
+        body: [
+          'There\'s no staff dashboard — deliberately. Orders trigger an email to the owner and land in a tracking spreadsheet automatically, which matched how they already worked rather than asking them to learn a new tool.',
+        ],
+      },
+      {
+        heading: 'The hard part',
+        body: [
+          'The hard part wasn\'t the ordering flow, it was replacing everything that used to happen by hand around it: reading an order out of a DM, typing a confirmation back, and manually adding it to a tracking sheet. I automated that whole chain — order in, confirmation out, sheet updated — so the only manual step left is the owner packing what\'s on the screen. Built with Next.js, Supabase, and Resend. In production since June 2026.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'freelance-web',
+    title: 'Websites for F&B businesses',
+    tagline: 'Config-driven sites for cafes in Bangalore, run end to end',
+    role: 'Freelance — design, build, and client management',
+    timeframe: 'May–August 2026',
+    stack: ['Next.js', 'TypeScript', 'Tailwind'],
+    links: {},
+    sections: [
+      {
+        heading: 'What it was',
+        body: [
+          'Between May and August 2026, I designed and shipped websites for two cafes in Bangalore. I ran each engagement end to end: cold outreach, the discovery call, scoping and pricing, sourcing and vetting the photos and menu data, architecture, and QA before launch.',
+        ],
+      },
+      {
+        heading: 'The constraint',
+        body: [
+          'The interesting constraint was economic, not technical. Sites at this price point stop being worth building if every content change means a developer. So I built on a config-driven architecture in Next.js and TypeScript where branding, menu, hours, and copy live in a typed config file separate from the components. A new client is a new config and an asset folder rather than a new codebase, and an owner who wants to change a price on Tuesday doesn\'t wait on me.',
+        ],
+      },
+      {
+        heading: 'A note on clients',
+        body: [
+          'I\'m not naming clients here, but the sites are live and I\'m happy to send links or walk through the code on a call.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'data-quality-agent',
     title: 'AI data-quality agent',
     tagline: 'One agent in a multi-agent pipeline for enterprise master data.',
