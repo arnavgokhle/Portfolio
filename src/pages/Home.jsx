@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <>
-      <Seo description="Arnav Gokhle — Business Analytics & AI at UT Dallas. I build AI agents, data products, and full-stack software, and ship them." />
+      <Seo description="Arnav Gokhle — Business Analytics & AI and Supply Chain at UT Dallas. I build AI agents, data products, and software people actually use, and ship them." />
       <section className="hero">
         <HeroVideo />
 

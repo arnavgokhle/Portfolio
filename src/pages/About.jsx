@@ -4,30 +4,31 @@ import { site, externalLinks } from '../content/site.js'
 import { EASE } from '../hooks/useEntrance.js'
 import './About.css'
 
-// TODO: replace placeholder details (degree, dates, skills) before going live.
 const facts = [
   {
     group: 'Education',
     rows: [
-      { label: 'Degree', value: 'M.S. Business Analytics & AI, UT Dallas' },
-      { label: 'Concentration', value: 'Supply Chain' },
-      { label: 'Expected', value: '2027' },
+      { label: 'Degree', value: "Bachelor's, double major in Business Analytics & AI and Supply Chain Analytics" },
+      { label: 'School', value: 'UT Dallas, accelerated program' },
+      { label: 'GPA', value: '3.8' },
+      { label: 'Graduating', value: 'December 2027' },
     ],
   },
   {
     group: 'Current roles',
     rows: [
-      { label: 'Founder', value: 'Setpiece — AI player-prop picks for the 2026 World Cup' },
-      { label: 'Contributor', value: 'TailTech — white-label SaaS for pet care businesses' },
-      { label: 'Freelance', value: 'Web development for F&B businesses' },
+      { label: 'Analyst', value: 'KPMG Digital Lighthouse' },
+      { label: 'Founder', value: 'Setpiece (Summer 2026)' },
+      { label: 'Technical co-founder', value: 'TailTech' },
+      { label: 'Freelance', value: 'Web developer' },
     ],
   },
   {
     group: 'Skills',
     rows: [
-      { label: 'AI & agents', value: 'LLM tooling, multi-agent pipelines, evaluation' },
-      { label: 'Data', value: 'Python, SQL, analytics, forecasting' },
-      { label: 'Web', value: 'React, Next.js, TypeScript, Laravel, Livewire' },
+      { label: 'AI & agents', value: 'Claude API, multi-agent pipelines, prompt engineering across models, RAG, structured output enforcement' },
+      { label: 'Data', value: 'Python (Pandas, NumPy), SQL, Tableau, SAP S/4HANA, Monte Carlo simulation' },
+      { label: 'Web', value: 'Next.js, TypeScript, React, Tailwind, Supabase, Laravel, Flutter, Git, Vercel' },
     ],
   },
 ]
@@ -45,7 +46,7 @@ export default function About() {
 
   return (
     <>
-      <Seo title="About" description="About Arnav Gokhle — Business Analytics & AI graduate student at UT Dallas building AI agents, data products, and full-stack software." />
+      <Seo title="About" description="About Arnav Gokhle — Business Analytics & AI and Supply Chain Analytics at UT Dallas. Analyst at KPMG Digital Lighthouse, founder of Setpiece, technical co-founder at TailTech." />
       <section className="about page">
         <motion.h1 className="page-title" {...fade(0)}>
           About
@@ -53,14 +54,26 @@ export default function About() {
 
         <motion.div className="about__bio" {...fade(1)}>
           <p>
-            I'm Arnav, a graduate student in Business Analytics & AI at UT Dallas
-            with a focus on supply chain. I like problems that sit between data and
-            product: figuring out what a model should say, then building the thing
-            that says it.
+            I study Business Analytics & AI and Supply Chain Analytics at UT Dallas,
+            graduating December 2027. Most of what I know about building software I
+            learned outside of class, because every project on this site started as
+            a problem someone actually had.
           </p>
           <p>
-            Outside coursework I run Setpiece, contribute to TailTech, and take on
-            freelance web work. I'm looking for an internship for summer 2027.
+            Setpiece exists because DFS picks are sold with confidence nobody has
+            earned, so I built an engine that shows its reasoning and stays quiet
+            when the data is thin. TailTech exists because small pet care businesses
+            in India were being asked to choose between a spreadsheet and enterprise
+            pricing. The restaurant sites exist because a cafe owner needed a website
+            and the quotes he was getting were absurd. The KPMG work is the same
+            instinct applied to enterprise data: the interesting part wasn't
+            generating rules, it was making the system adapt to a new client without
+            a code change.
+          </p>
+          <p>
+            Before this I captained a Division 1 cricket side for four years and ran
+            a kitchen as head chef, which is where I learned that shipping on time is
+            a skill separate from being right.
           </p>
         </motion.div>
 

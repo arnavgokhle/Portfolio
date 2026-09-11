@@ -1,39 +1,41 @@
-// TODO: replace the placeholder prose below with your own writing.
-// The structure and metadata (slug, role, timeframe, stack, links) are what
-// the pages depend on. Adding a project = adding one object to this array.
+// TODO: "client-sites" still has placeholder prose. The other three are written
+// from your notes; edit freely. Adding a project = adding one object here.
+//
+// Note on "data-quality-agent": keep it at the architecture level. No client
+// names, internal project names, specific tables, or rule counts.
 
 export const projects = [
   {
     slug: 'setpiece',
     title: 'Setpiece',
-    tagline: 'AI-generated football player-prop picks for the 2026 World Cup.',
+    tagline: 'AI player-prop picks for DFS players, with the reasoning shown before kickoff.',
     role: 'Founder',
-    timeframe: '2025 – 2026',
-    stack: ['Next.js', 'TypeScript', 'Python'],
+    timeframe: 'Summer 2026',
+    stack: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase', 'Anthropic API'],
     links: {
-      live: 'https://setpiece.example.com',
+      live: 'https://setpiecepicks.com',
       repo: '',
     },
     sections: [
       {
         heading: 'What it does',
         body: [
-          'Setpiece is a consumer product that turns match data into a short daily list of player-prop picks: shots on target, tackles, passes, cards. It is built around the 2026 World Cup, where a compressed schedule and unfamiliar matchups make the usual gut-feel approach unreliable.',
-          'Users open the app, see the picks for the day with a confidence level and a one-line rationale, and can drill into the numbers behind each one. The goal is to make a sound, data-backed pick legible in under ten seconds.',
+          'Setpiece publishes football player-prop picks for daily fantasy players on PrizePicks, Underdog, and Betr. Each pick goes out before kickoff with the reasoning behind it, and every result is tracked publicly with a timestamp, so the record is there for anyone to check.',
+          'DFS picks are usually sold with confidence nobody has earned. Setpiece is built on the opposite premise: show the work, and stay quiet when the data does not support a call. That restraint is the product.',
         ],
       },
       {
-        heading: 'How the picks engine works',
+        heading: 'How Scout works',
         body: [
-          'A Python service ingests fixture, lineup, and per-player event data, then builds rolling per-90 features for each player against the opponent profile. A model layer scores each candidate prop and only surfaces picks where the modelled edge clears a threshold.',
-          'The Next.js front end consumes a versioned JSON contract, so the model can be retrained or swapped without touching the UI. Every pick is stored with the inputs that produced it, which makes post-match review straightforward.',
+          'The picks engine is called Scout. It pulls player data for roughly 4,300 players across seven leagues, plus tournament data from the 2018 and 2022 World Cups, Euro 2024, and Copa America 2024. Data comes from FBref, API-Football, and The Odds API.',
+          'For each fixture Scout builds a player profile against the opponent, compares it to the posted line, and drafts a pick with its reasoning through the Anthropic API. If the modelled edge or the underlying sample is thin, it skips the prop rather than publishing a weak call. Picks, reasoning, and results are stored in Supabase and served by a Next.js front end.',
         ],
       },
       {
         heading: 'What shipping it taught me',
         body: [
-          'Being the only person on the project meant owning the full loop: data pipeline, model, product, and the boring parts like caching and error states. The hardest problems were not modelling problems; they were about deciding what not to show.',
-          'The other lesson was about cadence. A live tournament is an unforgiving deadline, and shipping something narrow and correct every day beat shipping something ambitious once.',
+          'The hard part was not generating picks. It was deciding when not to, and building the product so that restraint is visible instead of looking like a gap in coverage.',
+          'A live tournament is an unforgiving deadline. Publishing something narrow and defensible every match day beat publishing something ambitious once.',
         ],
       },
     ],
@@ -41,10 +43,10 @@ export const projects = [
   {
     slug: 'tailtech',
     title: 'TailTech',
-    tagline: 'B2B white-label SaaS platform for pet care businesses.',
-    role: 'Contributor',
+    tagline: 'B2B white-label SaaS for pet care businesses in India.',
+    role: 'Technical co-founder',
     timeframe: '2025 – present',
-    stack: ['Laravel', 'Livewire', 'MySQL', 'Flutter'],
+    stack: ['Laravel', 'Livewire', 'Flutter', 'GitHub Actions'],
     links: {
       live: '',
       repo: '',
@@ -53,22 +55,22 @@ export const projects = [
       {
         heading: 'The problem',
         body: [
-          'Independent pet groomers and boarding businesses run on WhatsApp, notebooks, and memory. Bookings get double-scheduled, customers forget appointments, and there is no branded surface a business can point its customers to.',
-          'TailTech gives each business its own branded booking experience and back office without requiring them to build or maintain software.',
+          'Small pet care businesses in India were being asked to choose between a spreadsheet and enterprise pricing. Groomers and boarders run on WhatsApp and memory, and there is no branded surface they can point customers to.',
+          'TailTech gives each business its own branded booking app and back office without them building or maintaining software. Revenue is 6% of GMV, split at source. The product is currently pre-revenue with the app in a staging environment.',
         ],
       },
       {
         heading: 'Architecture',
         body: [
-          'The platform is a multi-tenant Laravel application. A partner onboards through a guided wizard, uploads a logo and service photos, and receives a business code that customers use to reach their branded storefront. Tenant data is scoped at the query layer so a single deployment serves every partner.',
-          'Livewire handles the interactive admin surfaces without a separate front-end build, which keeps the operational footprint small for a lean team.',
+          'The platform is a multi-tenant Laravel and Livewire application. An owner completes a six-step self-serve onboarding wizard, and their branded app provisions automatically through GitHub Actions.',
+          'The mobile app started as per-tenant Gradle flavors, one build per business. That did not scale, so it moved to a single Flutter app that brands itself at runtime from the tenant configuration. One build now serves every partner.',
         ],
       },
       {
         heading: 'My contributions',
         body: [
-          'I worked on the partner onboarding flow, including validation for required brand assets, the service-photo upload step, and the copy and UI changes that replaced a per-tenant app build with the shared business-code model.',
-          'I also spent time on the mobile companion app and on consolidating diverging forks of the codebase into one maintainable repository.',
+          'I built the onboarding pipeline end to end: the wizard, its validation, and the automated provisioning behind it. I led the pivot from per-tenant builds to the runtime-branded Flutter app.',
+          'On the app side I built the business-switching UX, role-based access, and a token-based design system so tenant branding is applied consistently instead of overridden screen by screen.',
         ],
       },
     ],
@@ -88,7 +90,7 @@ export const projects = [
       {
         heading: 'The offer',
         body: [
-          'Small cafes and restaurants in Bangalore needed a fast, good-looking site with a menu, hours, location, and a way to reach them. Most had been quoted agency prices for a template. I offered a fixed-scope build with a short turnaround and handled everything from first outreach to final QA.',
+          'A cafe owner needed a website and the quotes he was getting were absurd. Small cafes and restaurants in Bangalore need a fast, good-looking site with a menu, hours, location, and a way to get in touch. I offered a fixed-scope build with a short turnaround and handled everything from first outreach to final QA.',
           'Two to three clients shipped on this model, each with full ownership of their content after launch.',
         ],
       },
@@ -103,7 +105,7 @@ export const projects = [
         heading: 'Results',
         body: [
           'Clients went from no web presence, or an outdated listing, to a mobile-first site they could share directly with customers. Turnaround per site dropped with each iteration of the shared codebase.',
-          'The bigger result was the process: scoping, communicating, and closing work end to end, which is not something a classroom project teaches.',
+          'The bigger result was the process: scoping, communicating, and closing work end to end.',
         ],
       },
     ],
@@ -112,9 +114,9 @@ export const projects = [
     slug: 'data-quality-agent',
     title: 'AI data-quality agent',
     tagline: 'One agent in a multi-agent pipeline for enterprise master data.',
-    role: 'Intern project',
-    timeframe: 'Summer 2026',
-    stack: ['Python', 'LLM tooling', 'SQL'],
+    role: 'Analyst, KPMG Digital Lighthouse',
+    timeframe: '2026', // TODO: confirm dates
+    stack: ['Python', 'FastAPI', 'React', 'LLM tooling'],
     links: {
       live: '',
       repo: '',
@@ -123,20 +125,21 @@ export const projects = [
       {
         heading: 'The problem',
         body: [
-          'Master data in large organisations accumulates inconsistencies over years: duplicate records, conflicting attributes, missing fields, and values that drift away from an agreed standard. Cleaning it manually does not scale, and rule-based checks miss anything the rules did not anticipate.',
+          'Master data in large organisations accumulates inconsistencies over years: duplicates, conflicting attributes, missing fields, and values drifting from an agreed standard. Generic null checks catch almost none of the issues that matter to the business.',
+          'This agent is one stage in a multi-agent pipeline for enterprise master data. Its job is to generate data-quality rules that reflect how the business actually uses the data.',
         ],
       },
       {
         heading: 'Approach',
         body: [
-          'The project was a multi-agent pipeline in which each agent owns one stage of the workflow. The data-quality agent I built sits early in that pipeline. It profiles incoming records, flags likely issues by category, proposes a correction with a confidence score, and hands ambiguous cases to a human reviewer rather than guessing.',
-          'The design kept the language model at the reasoning layer and kept deterministic checks in code. Every proposed change carried a rationale, and nothing was written back without passing a validation step.',
+          'The agent generates rules across six data-quality dimensions using business-grounded logic rather than structural checks alone. It runs on a FastAPI backend with a React front end, and the LLM layer is model-agnostic so the underlying model can be swapped without touching the pipeline.',
+          'The part worth writing about is the schema architecture. The first version had a hardcoded list of tables. That became an uploadable schema file that hot-reloads on the server, so the agent adapts to a new client instance without a code change or a restart.',
         ],
       },
       {
         heading: 'What I took from it',
         body: [
-          'Agents are most useful when their scope is narrow and their output is verifiable. The most valuable engineering time went into evaluation: building a labelled set of known issues and measuring precision before worrying about coverage.',
+          'Generating rules was not the interesting problem. Making the system adapt to a new client with no engineering work was. The most valuable time went into that boundary between configuration and code.',
         ],
       },
     ],
