@@ -10,18 +10,7 @@
 }
 
 .hero__top {
-  position: relative;
-  z-index: 1;
-  height: 260px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(255, 255, 255, 0.7) 25%,
-    rgba(255, 255, 255, 0.38) 50%,
-    rgba(255, 255, 255, 0.14) 75%,
-    rgba(255, 255, 255, 0.03) 92%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  height: var(--nav-h);
 }
 
 .hero__bottom {
