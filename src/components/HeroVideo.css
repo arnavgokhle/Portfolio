@@ -1,0 +1,24 @@
+.hero-video {
+  position: absolute;
+  z-index: 0;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-video__el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .hero-video {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
