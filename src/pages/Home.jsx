@@ -27,9 +27,9 @@ export default function Home() {
             </motion.p>
 
             <motion.h1 className="hero__heading" {...entrance({ y: 20, delay: 0.8 })}>
-              I build things
+              None of this was
               <br />
-              and ship them.
+              a class project.
             </motion.h1>
 
             <motion.div className="hero__actions" {...entrance({ y: 16, delay: 1.0 })}>
