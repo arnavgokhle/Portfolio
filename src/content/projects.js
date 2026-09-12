@@ -127,7 +127,7 @@ export const projects = [
       {
         heading: 'What the customer sees',
         body: [
-          'They place an order on the site, get an automated confirmation, and pay via UPI. Direct payment from qr code or upi id or phone number. verified by the business owner, once payment comes in.',
+          'They place an order on the site, get an automated confirmation, and pay via UPI. Payment goes directly to the owner through a QR code, UPI ID, or phone number, and the owner confirms the order once it lands.',
         ],
       },
       {
