@@ -8,6 +8,14 @@ import { projects } from './projects.js'
 export const SITE_URL = 'https://www.arnavgokhle.com'
 export const PERSON_ID = `${SITE_URL}/#person`
 
+// Share card shown in link previews. Source: scripts/og-card.html.
+export const OG_IMAGE = {
+  url: `${SITE_URL}/og.png`,
+  width: 1200,
+  height: 630,
+  alt: 'Arnav Gokhle. Business Analytics & AI at UT Dallas. I build software people use.',
+}
+
 // Meta descriptions, 150-160 characters each. A project without an entry here
 // falls back to its tagline, so adding a project still means adding one object.
 const projectDescriptions = {
@@ -137,7 +145,15 @@ export function headTags(seo) {
     { tag: 'meta', attrs: { property: 'og:description', content: seo.description } },
     { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
     { tag: 'meta', attrs: { property: 'og:site_name', content: site.name } },
-    { tag: 'meta', attrs: { property: 'og:image', content: `${SITE_URL}/hero-poster.jpg` } },
+    { tag: 'meta', attrs: { property: 'og:image', content: OG_IMAGE.url } },
+    { tag: 'meta', attrs: { property: 'og:image:width', content: String(OG_IMAGE.width) } },
+    { tag: 'meta', attrs: { property: 'og:image:height', content: String(OG_IMAGE.height) } },
+    { tag: 'meta', attrs: { property: 'og:image:alt', content: OG_IMAGE.alt } },
+    { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
+    { tag: 'meta', attrs: { name: 'twitter:title', content: seo.title } },
+    { tag: 'meta', attrs: { name: 'twitter:description', content: seo.description } },
+    { tag: 'meta', attrs: { name: 'twitter:image', content: OG_IMAGE.url } },
+    { tag: 'meta', attrs: { name: 'twitter:image:alt', content: OG_IMAGE.alt } },
   )
   if (seo.jsonLd) {
     tags.push({
