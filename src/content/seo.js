@@ -45,7 +45,7 @@ const pages = {
   '/about': {
     title: `About — ${site.name}`,
     description:
-      'About Arnav Gokhle: Business Analytics & AI and Supply Chain Analytics student at UT Dallas, KPMG analyst, and technical co-founder. Open for summer 2027.',
+      'Arnav Gokhle — four years captaining a Division 1 cricket side, a stint as head chef, and now Business Analytics & AI at UT Dallas building software people use.',
   },
 }
 
