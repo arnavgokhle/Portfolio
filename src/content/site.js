@@ -6,8 +6,8 @@ export const site = {
   tags: ['AI Agents', 'Data & Analytics', 'Product'],
   email: 'arnavgokhle@gmail.com',
   github: 'https://github.com/arnavgokhle',
-  linkedin: 'https://linkedin.com/in/arnavgokhle',
-  url: 'https://arnavgokhle.com', // TODO: confirm final domain
+  linkedin: 'https://www.linkedin.com/in/arnavgokhle',
+  url: 'https://www.arnavgokhle.com',
 }
 
 export const externalLinks = [

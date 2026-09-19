@@ -28,7 +28,7 @@ export default function Project() {
 
   return (
     <>
-      <Seo title={project.title} description={project.tagline} />
+      <Seo />
       <article className="project page">
         <motion.div {...fade(0)}>
           <Link to="/work" className="project__back">
@@ -82,6 +82,7 @@ export default function Project() {
               <li key={key}>
                 <a href={href} target="_blank" rel="noreferrer" className="btn btn--ghost">
                   {linkLabel[key] || key}
+                  <span className="visually-hidden"> for {project.title}</span>
                   <ArrowUpRight size={14} strokeWidth={2} aria-hidden="true" />
                 </a>
               </li>

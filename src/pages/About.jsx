@@ -45,7 +45,7 @@ export default function About() {
 
   return (
     <>
-      <Seo title="About" description="About Arnav Gokhle — Business Analytics & AI and Supply Chain Analytics at UT Dallas. Analyst at KPMG Digital Lighthouse, founder of Setpiece, technical co-founder at TailTech." />
+      <Seo />
       <section className="about page">
         <motion.h1 className="page-title" {...fade(0)}>
           About

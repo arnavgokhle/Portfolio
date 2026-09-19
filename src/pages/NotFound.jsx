@@ -4,7 +4,7 @@ import Seo from '../components/Seo.jsx'
 export default function NotFound() {
   return (
     <>
-      <Seo title="Not found" description="This page does not exist." />
+      <Seo notFound />
       <section className="container page">
         <h1 className="page-title">Not found</h1>
         <p className="muted" style={{ marginBottom: 24 }}>

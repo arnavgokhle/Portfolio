@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <Seo description="Arnav Gokhle — Business Analytics & AI and Supply Chain at UT Dallas. I build AI agents, data products, and software people actually use, and ship them." />
+      <Seo />
       <section className={HAS_VIDEO ? 'hero hero--video' : 'hero'}>
         <HeroVideo />
 
@@ -27,7 +27,7 @@ export default function Home() {
             </motion.p>
 
             <motion.h1 className="hero__heading" {...entrance({ y: 20, delay: 0.8 })}>
-              None of this was
+              None of this was{' '}
               <br />
               a class project.
             </motion.h1>

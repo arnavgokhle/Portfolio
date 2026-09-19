@@ -8,7 +8,7 @@ export default function Work() {
   const reduced = useReducedMotion()
   return (
     <>
-      <Seo title="Work" description="Selected projects by Arnav Gokhle: AI products, SaaS platforms, and client web work." />
+      <Seo />
       <section className="container page work">
         <h1 className="page-title">Work</h1>
         <ul className="work__list">
