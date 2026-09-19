@@ -57,6 +57,15 @@ function staticSeo() {
         writeFileSync(target, template.replace(marker, headFor(route)))
       }
 
+      // Unknown paths get a real HTTP 404 from the host, which serves this file.
+      // The app still boots in it and renders the NotFound page.
+      const nf = getSeo('/__not-found__')
+      const nfHead = [
+        `<title data-seo-static>${esc(nf.title)}</title>`,
+        `<meta data-seo-static name="robots" content="noindex" />`,
+      ].join('\n    ')
+      writeFileSync(resolve(outDir, '404.html'), template.replace(marker, nfHead))
+
       const urls = allRoutes()
         .map((r) => `  <url><loc>${esc(canonicalFor(r))}</loc></url>`)
         .join('\n')
