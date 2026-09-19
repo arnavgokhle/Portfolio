@@ -118,3 +118,34 @@ export function getSeo(pathname) {
 export function allRoutes() {
   return ['/', '/work', '/about', ...projects.map((p) => `/work/${p.slug}`)]
 }
+
+// The full list of managed <head> tags for a route, as plain data. The build
+// serialises this into static HTML; <Seo /> applies the same list in the browser
+// on client-side navigation. Every managed tag carries a data-seo attribute.
+export function headTags(seo) {
+  const tags = [
+    { tag: 'title', attrs: {}, text: seo.title },
+    { tag: 'meta', attrs: { name: 'description', content: seo.description } },
+  ]
+  if (seo.noindex) tags.push({ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } })
+  if (seo.canonical) {
+    tags.push({ tag: 'link', attrs: { rel: 'canonical', href: seo.canonical } })
+    tags.push({ tag: 'meta', attrs: { property: 'og:url', content: seo.canonical } })
+  }
+  tags.push(
+    { tag: 'meta', attrs: { property: 'og:title', content: seo.title } },
+    { tag: 'meta', attrs: { property: 'og:description', content: seo.description } },
+    { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
+    { tag: 'meta', attrs: { property: 'og:site_name', content: site.name } },
+    { tag: 'meta', attrs: { property: 'og:image', content: `${SITE_URL}/hero-poster.jpg` } },
+  )
+  if (seo.jsonLd) {
+    tags.push({
+      tag: 'script',
+      attrs: { type: 'application/ld+json' },
+      // "<" is escaped so the JSON can never close the script element early.
+      text: JSON.stringify(seo.jsonLd).replace(/</g, '\\u003c'),
+    })
+  }
+  return tags
+}

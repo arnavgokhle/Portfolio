@@ -1,17 +1,22 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './styles/global.css'
 
-// Static per-route head tags exist for crawlers that do not run JS. Once the
-// app boots, <Seo /> owns the head, so remove them to avoid duplicates.
-document.head.querySelectorAll('[data-seo-static]').forEach((el) => el.remove())
-
-createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root')
+const app = (
   <StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
+
+// Production HTML is prerendered at build time, so hydrate it. The dev server
+// serves an empty root, so render from scratch there.
+if (container.hasChildNodes()) {
+  hydrateRoot(container, app)
+} else {
+  createRoot(container).render(app)
+}

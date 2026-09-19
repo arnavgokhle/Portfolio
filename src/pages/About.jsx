@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'motion/react'
 import Seo from '../components/Seo.jsx'
 import { site, externalLinks } from '../content/site.js'
-import { EASE } from '../hooks/useEntrance.js'
+import { entranceProps } from '../hooks/useEntrance.js'
 import './About.css'
 
 const facts = [
@@ -34,14 +34,7 @@ const facts = [
 
 export default function About() {
   const reduced = useReducedMotion()
-  const fade = (i) =>
-    reduced
-      ? { initial: false }
-      : {
-          initial: { opacity: 0, y: 14 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.6, delay: 0.1 + i * 0.08, ease: EASE },
-        }
+  const fade = (i) => entranceProps(reduced, { y: 14, duration: 0.6, delay: 0.1 + i * 0.08 })
 
   return (
     <>

@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import Seo from '../components/Seo.jsx'
 import NotFound from './NotFound.jsx'
 import { getProject } from '../content/projects.js'
-import { EASE } from '../hooks/useEntrance.js'
+import { entranceProps } from '../hooks/useEntrance.js'
 import './Project.css'
 
 export default function Project() {
@@ -14,14 +14,7 @@ export default function Project() {
 
   if (!project) return <NotFound />
 
-  const fade = (i) =>
-    reduced
-      ? { initial: false }
-      : {
-          initial: { opacity: 0, y: 14 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.6, delay: 0.1 + i * 0.08, ease: EASE },
-        }
+  const fade = (i) => entranceProps(reduced, { y: 14, duration: 0.6, delay: 0.1 + i * 0.08 })
 
   const links = Object.entries(project.links || {}).filter(([, href]) => href)
   const linkLabel = { live: 'Live site', repo: 'Repository' }

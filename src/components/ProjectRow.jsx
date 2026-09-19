@@ -1,16 +1,10 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
-import { EASE } from '../hooks/useEntrance.js'
+import { entranceProps } from '../hooks/useEntrance.js'
 import './ProjectRow.css'
 
 export default function ProjectRow({ project, index, reduced }) {
-  const anim = reduced
-    ? { initial: false }
-    : {
-        initial: { opacity: 0, y: 16 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.6, delay: index * 0.06, ease: EASE },
-      }
+  const anim = entranceProps(reduced, { y: 16, duration: 0.6, delay: index * 0.06 })
 
   return (
     <motion.li className="row-wrap" {...anim}>
