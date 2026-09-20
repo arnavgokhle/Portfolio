@@ -101,6 +101,34 @@
   line-height: 1.6;
 }
 
+/* Optional screenshots, below the body */
+.project__images {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.project__figure {
+  margin: 0;
+}
+
+.project__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--gray-bg);
+}
+
+.project__figure figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 .project__links {
   margin-top: 48px;
   padding-top: 32px;

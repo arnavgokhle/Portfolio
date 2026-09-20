@@ -17,6 +17,7 @@ export default function Project() {
   const fade = (i) => entranceProps(reduced, { y: 14, duration: 0.6, delay: 0.1 + i * 0.08 })
 
   const links = Object.entries(project.links || {}).filter(([, href]) => href)
+  const images = project.images || []
   const linkLabel = { live: 'Live site', repo: 'Repository' }
 
   return (
@@ -69,8 +70,26 @@ export default function Project() {
           ))}
         </div>
 
+        {images.length > 0 && (
+          <motion.div className="project__images" {...fade(3 + project.sections.length)}>
+            {images.map((img) => (
+              <figure key={img.src} className="project__figure">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+                {img.caption && <figcaption>{img.caption}</figcaption>}
+              </figure>
+            ))}
+          </motion.div>
+        )}
+
         {links.length > 0 && (
-          <motion.ul className="project__links" aria-label="Project links" {...fade(3 + project.sections.length)}>
+          <motion.ul className="project__links" aria-label="Project links" {...fade(4 + project.sections.length)}>
             {links.map(([key, href]) => (
               <li key={key}>
                 <a href={href} target="_blank" rel="noreferrer" className="btn btn--ghost">

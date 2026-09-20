@@ -1,6 +1,11 @@
 // TODO: review the prose below before going live. Adding a project = adding one
 // object to this array.
 //
+// `images` is optional: [{ src, alt, caption, width?, height? }]. Files live in
+// public/projects/. width/height are the file's pixel size; they are optional but
+// let the browser reserve space so lazy-loaded images do not shift the page. The
+// first image doubles as the row thumbnail on /work.
+//
 // Note on "data-quality-agent": keep it at the architecture level. No client
 // names, internal project names, specific tables, or rule counts.
 
@@ -16,6 +21,29 @@ export const projects = [
       live: '',
       repo: '',
     },
+    images: [
+      {
+        src: '/projects/tailtech-branding.webp',
+        width: 1600,
+        height: 1004,
+        alt: 'Step 2 of 6 in the TailTech onboarding wizard, titled Brand your app, with fields for app name, tagline, primary, secondary and accent colors, and a logo upload.',
+        caption: 'Onboarding step 2 — a partner picks their colors and logo',
+      },
+      {
+        src: '/projects/tailtech-golive.webp',
+        width: 1600,
+        height: 1004,
+        alt: 'Final step of the onboarding wizard, Review & Go Live, summarising the business name, brand colors, and one location, service and staff member, above a Complete Setup button.',
+        caption: 'Step 6 — review and go live. Completing setup publishes the business and creates the admin login',
+      },
+      {
+        src: '/projects/tailtech-tenants.webp',
+        width: 1600,
+        height: 1125,
+        alt: 'Three phone screens sharing one home layout, branded for three businesses: Bark Avenue in navy, Bright Paws Studio in red, and Pawsome Care in teal, each with its own pets, services and accent color.',
+        caption: 'The same screen, three different businesses — one app resolving branding at login',
+      },
+    ],
     sections: [
       {
         heading: 'The problem',
@@ -85,6 +113,29 @@ export const projects = [
       live: 'https://setpiecepicks.com',
       repo: '',
     },
+    images: [
+      {
+        src: '/projects/setpiece-results.webp',
+        width: 1600,
+        height: 1556,
+        alt: 'Setpiece track record page headed Every pick. Every result. It shows a 71% hit rate across 80 picks, 57 won and 23 lost, above a table marking each pick won or lost with how many hours before kickoff it was posted.',
+        caption: 'Public results log — 80 picks, 71% hit rate, every pick posted before kickoff',
+      },
+      {
+        src: '/projects/setpiece-pick-card.webp',
+        width: 968,
+        height: 1668,
+        alt: 'Pick card for Lionel Messi: more than 3.5 total shots at 82% confidence. A Scout Analysis paragraph explains the call, followed by his last five match totals and a footer showing the pick was posted 16.7 hours before kickoff and won.',
+        caption: 'A pick with Scout\'s reasoning shown',
+      },
+      {
+        src: '/projects/setpiece-home.webp',
+        width: 1600,
+        height: 1000,
+        alt: 'Setpiece home page with the headline The analytical edge for fantasy football, an email signup, and a live Scout panel previewing two picks with their confidence levels.',
+        caption: 'Setpiece landing page',
+      },
+    ],
     sections: [
       {
         heading: 'What it does',
@@ -117,6 +168,29 @@ export const projects = [
     timeframe: 'June 2026 — present',
     stack: ['Next.js', 'Supabase', 'Resend'],
     links: {},
+    images: [
+      {
+        src: '/projects/orders-menu.webp',
+        width: 1600,
+        height: 1004,
+        alt: 'Menu page of a bakery ordering site. A pink banner reads Something for every sweet tooth with a notice about a 10 to 12 day fulfilment delay, above a Cookies section where each item has an Add to Cart button.',
+        caption: 'The menu customers order from',
+      },
+      {
+        src: '/projects/orders-checkout.webp',
+        width: 1600,
+        height: 1004,
+        alt: 'Checkout page with three cart items on the left, each with a quantity stepper and a customisation notes field, and a delivery details form on the right with a calendar open to choose a delivery date.',
+        caption: 'Checkout with delivery scheduling',
+      },
+      {
+        src: '/projects/orders-alert-email.webp',
+        width: 1600,
+        height: 729,
+        alt: 'Plain email titled New Order Placed, listing the customer\'s contact details, delivery address and date, a three-row item table totalling ₹2398, and a note asking for a birthday message in the box.',
+        caption: 'Order alert to the owner — deliberately plain, it gets read on a phone mid-service',
+      },
+    ],
     sections: [
       {
         heading: 'The problem',
