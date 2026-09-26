@@ -114,8 +114,8 @@ export const projects = [
     title: 'Setpiece',
     tagline: 'AI player-prop picks for DFS players, with the reasoning shown before kickoff.',
     stats: [
-      { value: '91', label: 'picks published' },
-      { value: '76%', label: 'hit rate' },
+      { value: '80', label: 'picks published' },
+      { value: '71%', label: 'hit rate' },
     ],
     role: 'Founder',
     timeframe: 'Summer 2026',
