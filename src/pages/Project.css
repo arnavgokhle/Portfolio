@@ -36,6 +36,31 @@
   line-height: 1.5;
 }
 
+/* Optional headline numbers under the tagline */
+.project__stats {
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project__stat dd {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.project__stat dt {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
 .project__meta {
   margin: 32px 0 0;
   padding: 20px 0;
@@ -148,5 +173,9 @@
   }
   .project__meta-item--stack {
     flex-basis: auto;
+  }
+  .project__stats {
+    flex-direction: row;
+    gap: 40px;
   }
 }

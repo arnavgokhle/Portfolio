@@ -18,6 +18,7 @@ export default function Project() {
 
   const links = Object.entries(project.links || {}).filter(([, href]) => href)
   const images = project.images || []
+  const stats = project.stats || []
   const linkLabel = { live: 'Live site', repo: 'Repository' }
 
   return (
@@ -34,6 +35,16 @@ export default function Project() {
         <motion.header className="project__head" {...fade(1)}>
           <h1 className="project__title">{project.title}</h1>
           <p className="project__tagline">{project.tagline}</p>
+          {stats.length > 0 && (
+            <dl className="project__stats">
+              {stats.map((s) => (
+                <div key={s.label} className="project__stat">
+                  <dd>{s.value}</dd>
+                  <dt>{s.label}</dt>
+                </div>
+              ))}
+            </dl>
+          )}
         </motion.header>
 
         <motion.dl className="project__meta" {...fade(2)}>

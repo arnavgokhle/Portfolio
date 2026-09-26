@@ -1,6 +1,7 @@
 // TODO: review the prose below before going live. Adding a project = adding one
 // object to this array.
 //
+// `stats` is optional: [{ value, label }], shown under the tagline.
 // `images` is optional: [{ src, alt, caption, width?, height? }]. Files live in
 // public/projects/. width/height are the file's pixel size; they are optional but
 // let the browser reserve space so lazy-loaded images do not shift the page. The
@@ -112,6 +113,10 @@ export const projects = [
     slug: 'setpiece',
     title: 'Setpiece',
     tagline: 'AI player-prop picks for DFS players, with the reasoning shown before kickoff.',
+    stats: [
+      { value: '91', label: 'picks published' },
+      { value: '76%', label: 'hit rate' },
+    ],
     role: 'Founder',
     timeframe: 'Summer 2026',
     stack: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase', 'Anthropic API'],
