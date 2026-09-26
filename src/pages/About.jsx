@@ -1,6 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react'
 import Seo from '../components/Seo.jsx'
-import { site, externalLinks } from '../content/site.js'
 import { entranceProps } from '../hooks/useEntrance.js'
 import './About.css'
 
@@ -8,18 +7,18 @@ const facts = [
   {
     group: 'Education',
     rows: [
-      { label: 'Degree', value: "Bachelor's, double major in Business Analytics & AI and Supply Chain Analytics" },
+      { label: 'Pursuing', value: "Bachelor's, double major in Business Analytics & AI and Supply Chain Analytics" },
       { label: 'School', value: 'UT Dallas, accelerated program' },
       { label: 'GPA', value: '3.8' },
-      { label: 'Graduating', value: 'December 2027' },
+      { label: 'Expected graduation', value: 'December 2027' },
     ],
   },
   {
-    group: 'Current roles',
+    group: 'Experience',
     rows: [
-      { label: 'Analyst', value: 'KPMG Digital Lighthouse' },
-      { label: 'Founder', value: 'Setpiece (Summer 2026)' },
-      { label: 'Technical co-founder', value: 'TailTech' },
+      { label: 'Technical co-founder — TailTech', value: '2025 – present' },
+      { label: 'Founder — Setpiece', value: '2026 – present' },
+      { label: 'Data & AI Intern — KPMG Digital Lighthouse', value: 'June – August 2026' },
     ],
   },
   {
@@ -46,8 +45,9 @@ export default function About() {
 
         <motion.div className="about__bio" {...fade(1)}>
           <p>
-            I study Business Analytics & AI and Supply Chain Analytics at UT Dallas,
-            graduating December 2027. Most of what I know about building software I
+            I'm a student at UT Dallas pursuing a double major in Business Analytics
+            & AI and Supply Chain Analytics, expected to graduate in December 2027.
+            Most of what I know about building software I
             learned outside of class, because every project on this site started as
             a problem someone actually had.
           </p>
@@ -81,24 +81,6 @@ export default function About() {
             </dl>
           </motion.section>
         ))}
-
-        <motion.section className="about__contact" {...fade(2 + facts.length)}>
-          <h2 className="about__group-title">Contact</h2>
-          <ul className="about__links">
-            {externalLinks.map((l) => (
-              <li key={l.label}>
-                <a
-                  href={l.href}
-                  className="btn btn--ghost"
-                  target={l.href.startsWith('mailto:') ? undefined : '_blank'}
-                  rel={l.href.startsWith('mailto:') ? undefined : 'noreferrer'}
-                >
-                  {l.label === 'Email' ? site.email : l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </motion.section>
       </section>
     </>
   )

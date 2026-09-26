@@ -49,13 +49,13 @@ export const projects = [
         heading: 'The problem',
         body: [
           'Small pet care businesses in India were being asked to choose between a spreadsheet and enterprise pricing. Groomers and boarders run on WhatsApp and memory, and there is no branded surface they can point customers to.',
-          'TailTech gives each business its own branded booking app and back office without them building or maintaining software. Revenue is 6% of GMV, split at source. The product is currently pre-revenue with the app in a staging environment.',
+          'TailTech gives each business its own branded booking app and back office without them building or maintaining software. Revenue is 6% of GMV, split at source. The platform works end to end, from onboarding to a live branded app, and we\'re now in conversations with our first service providers.',
         ],
       },
       {
         heading: 'Architecture',
         body: [
-          'The platform is a multi-tenant Laravel and Livewire application. An owner completes a six-step self-serve onboarding wizard, and their branded app provisions automatically through GitHub Actions.',
+          'The platform is a multi-tenant Laravel and Livewire application. An owner completes a six-step self-serve onboarding wizard. At go-live the business is published and gets a code its customers use to sign up. Every business runs on the same app, which loads the right branding at login.',
           'The mobile app started as per-tenant Gradle flavors, one build per business. That did not scale, so it moved to a single Flutter app that brands itself at runtime from the tenant configuration. One build now serves every partner.',
         ],
       },
@@ -66,13 +66,19 @@ export const projects = [
           'On the app side I built the business-switching UX, role-based access, and a token-based design system so tenant branding is applied consistently instead of overridden screen by screen.',
         ],
       },
+      {
+        heading: 'A bug worth finding',
+        body: [
+          'While preparing this demo, I found that a partner changing their logo or colors in settings never reached the app. Branding only synced once, at onboarding. I moved app-facing branding onto the API so settings changes reach every customer\'s app, before the first real partner could hit it.',
+        ],
+      },
     ],
   },
   {
     slug: 'data-quality-agent',
     title: 'AI data-quality agent',
     tagline: 'One agent in a multi-agent pipeline for enterprise master data.',
-    role: 'Analyst, KPMG Digital Lighthouse',
+    role: 'Data & AI Intern, KPMG Digital Lighthouse',
     timeframe: 'June – August 2026',
     stack: ['Python', 'FastAPI', 'React', 'LLM tooling'],
     links: {

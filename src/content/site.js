@@ -1,7 +1,7 @@
 export const site = {
   name: 'Arnav Gokhle',
   tagline: 'Business Analytics & AI + Supply Chain @ UT Dallas',
-  availability: 'Available for Summer 2027',
+  availability: 'Open to internships',
   focus: ['AI Agents', 'Supply Chain'],
   tags: ['AI Agents', 'Data & Analytics', 'Product'],
   email: 'arnavgokhle@gmail.com',
