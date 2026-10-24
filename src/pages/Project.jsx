@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { motion, useReducedMotion } from 'motion/react'
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
@@ -11,6 +12,16 @@ export default function Project() {
   const { slug } = useParams()
   const project = getProject(slug)
   const reduced = useReducedMotion()
+  const videoRef = useRef(null)
+  const video = project?.video || null
+
+  // Start playback from code so the prerendered markup is identical for everyone
+  // and reduced-motion visitors get a paused reel with controls.
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el || reduced) return
+    el.play().catch(() => {})
+  }, [reduced, video])
 
   if (!project) return <NotFound />
 
@@ -81,8 +92,24 @@ export default function Project() {
           ))}
         </div>
 
-        {images.length > 0 && (
+        {(video || images.length > 0) && (
           <motion.div className="project__images" {...fade(3 + project.sections.length)}>
+            {video && (
+              <figure className="project__figure">
+                <video
+                  ref={videoRef}
+                  src={video.src}
+                  poster={video.poster}
+                  controls
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={video.caption}
+                />
+                {video.caption && <figcaption>{video.caption}</figcaption>}
+              </figure>
+            )}
             {images.map((img) => (
               <figure key={img.src} className="project__figure">
                 <img

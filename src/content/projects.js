@@ -2,6 +2,7 @@
 // object to this array.
 //
 // `stats` is optional: [{ value, label }], shown under the tagline.
+// `video` is optional: { src, poster, caption }, shown above the images.
 // `images` is optional: [{ src, alt, caption, width?, height? }]. Files live in
 // public/projects/. width/height are the file's pixel size; they are optional but
 // let the browser reserve space so lazy-loaded images do not shift the page. The
@@ -21,6 +22,11 @@ export const projects = [
     links: {
       live: '',
       repo: '',
+    },
+    video: {
+      src: '/projects/tailtech-reel.mp4',
+      poster: '/projects/tailtech-reel-poster.webp',
+      caption: 'TailTech in 20 seconds',
     },
     images: [
       {
@@ -117,6 +123,11 @@ export const projects = [
       { value: '80', label: 'picks published' },
       { value: '71%', label: 'hit rate' },
     ],
+    video: {
+      src: '/projects/setpiece-reel.mp4',
+      poster: '/projects/setpiece-reel-poster.webp',
+      caption: 'Setpiece in 20 seconds',
+    },
     role: 'Founder',
     timeframe: 'Summer 2026',
     stack: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase', 'Anthropic API'],
